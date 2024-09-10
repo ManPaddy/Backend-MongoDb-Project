@@ -20,6 +20,10 @@ app.use("/api", blogRoute);
 app.use("/api", testroute);
 app.use("/api", todoRoute);
 
+app.get("/", (req, res) => {
+    res.send("Welcome to your application!");
+});
+
 mongoose.connect(process.env.MONGO_URL)
 .then(() => {
     console.log("Database has started");
